@@ -8,11 +8,9 @@ project(cmake-base LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Enable compiler warnings for GCC/Clang or MSVC.
+# Add compiler options for MSVC.
 if (MSVC)
-    add_compile_options(/MP /permissive-) # /MP for multi-processor compilation, /permissive- for strict ISO C++ compliance
-else()
-    add_compile_options(-Wall -Wextra -pedantic) # -Wall for all warnings, -Wextra for additional warnings, -pedantic for strict ISO C++ compliance
+    add_compile_options(/MP) # /MP for multi-processor compilation
 endif()
 
 # Enable folder structure in IDEs.
