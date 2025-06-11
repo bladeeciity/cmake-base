@@ -1,8 +1,11 @@
 # Set the minimum required version of CMake.
 cmake_minimum_required(VERSION 3.21)
 
-# Set the project name and supported languages.
-project(cmake-base LANGUAGES CXX)
+# Get the project name from the current source directory.
+get_filename_component(PROJECT_NAME ${CMAKE_CURRENT_SOURCE_DIR} NAME)
+
+# Set the project name & supported language.
+project(${PROJECT_NAME} LANGUAGES CXX)
 
 # Set the C++ standard to C++23.
 set(CMAKE_CXX_STANDARD 23)
